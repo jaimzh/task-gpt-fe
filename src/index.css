@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-pattern: #222222;
+  --color-background: #1b1b1b;
+  --color-orange: #ff9c28;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-grey: #a5a5a5;
+  --color-darker-grey: #343434;
+  --color-mint-500: oklch(0.72 0.11 178);
+}
+
+@layer base {
+  body {
+    font-family: "Inter", sans-serif;
+    background-image: linear-gradient(
+        var(--color-pattern) 3px,
+        transparent 1.5px
+      ),
+      linear-gradient(
+        to right,
+        var(--color-pattern) 3px,
+        var(--color-background) 1.5px
+      );
+    @apply bg-[length:50px_50px];
+  }
+
+  h1 {
+    @apply text-white text-4xl font-bold sm:text-6xl;
+
+    & span {
+      @apply text-orange;
+    }
+  }
+
+  main {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  input {
+    @apply w-full  outline-none text-[1rem];
+  }
+}
+
+@layer components {
+  .wrapper {
+    @apply px-5 py-12  max-w-7xl mx-auto flex flex-col;
+  }
+  .hero {
+    @apply flex flex-col items-center justify-center text-center sm:flex-row;
+  }
+
+  .ai-container {
+    @apply bg-black px-3 py-1 mt-3.5 w-[40%] rounded-4xl text-white text-[12px] font-bold sm:w-[130px];
+  }
+
+  .input-bar {
+    @apply bg-white mt-3.5 p-3 px-5 border-3 border-grey rounded-full w-[100%]  border-darker-grey rounded-3xl shadow-lg/40 shadow-[#000000];
+    transition: border 0.3s ease;
+  }
+
+  .input-bar:hover,
+  .input-bar:focus {
+    @apply border-orange /* Customize the shadow here */
+  }
+
+  .task-list {
+    /* box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.536); */
+    @apply bg-background  p-3 px-5 border-2 mt-2.5 border-darker-grey rounded-3xl shadow-xl/40 shadow-[#000000];
+  }
+
+  .btn-styles {
+    @apply transition duration-200 hover:brightness-500;
+  }
+}
