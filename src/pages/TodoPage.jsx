@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import InputBar from "../components/InputBar";
 import TaskList from "../components/TaskList";
+import logo from "../assets/logo.svg";
 
 function TodoPage() {
   const [userTask, setUserTask] = useState("");
@@ -55,7 +56,7 @@ function TodoPage() {
       <div className="wrapper">
         <header className="text-center flex flex-col items-center gap-3">
           <div className=" hero">
-            <img className="size-36  " src="./logo.svg" alt="" />
+            <img className="size-36  " src={logo} alt="logo" />
             <h1>
               Turn your <span>Ideas </span> <br />
               into <span>Tasks</span>

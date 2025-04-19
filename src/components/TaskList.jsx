@@ -54,7 +54,7 @@ function TaskList({
             )}
           </div>
 
-          <div className="flex gap-4">
+          <div className="bg flex gap-4">
             {editingTaskId === task.id ? (
               <button
                 className="text-green-400 text-[14px] h-auto hover:text-white transition duration-200"
