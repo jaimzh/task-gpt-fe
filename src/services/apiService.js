@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000";
+// const API_URL = "http://localhost:5000";
+const API_URL = https://task-gpt-be.onrender.com
 
 export const generateTasks = async (prompt) => {
   try {
