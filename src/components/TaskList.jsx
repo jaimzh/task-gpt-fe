@@ -20,7 +20,7 @@ function TaskList({
     <div className="task-list">
       {tasks.map((task, index) => (
         <div
-          key={task.id || index}
+          key={task._id || index}
           className="task-item flex items-center justify-between p-2 rounded-lg mb-2"
         >
           <div className="flex items-center gap-2">
@@ -28,16 +28,16 @@ function TaskList({
             
               type="checkbox"
               checked={task.isCompleted}
-              onChange={() => handleToggleComplete(task.id)}
+              onChange={() => handleToggleComplete(task._id, task.isCompleted)}
               className="w-4 h-4 accent-[var(--color-orange)]"
             />
 
-            {editingTaskId === task.id ? (
+            {editingTaskId === task._id ? (
               <input
                 type="text"
                 value={editedText}
                 onChange={(e) => setEditedText(e.target.value)}
-                onKeyDown={(e) => handleKeyPress(e, task.id)}
+                onKeyDown={(e) => handleKeyPress(e, task._id)}
                 className="text-white rounded "
                 autoFocus
               />
@@ -55,10 +55,10 @@ function TaskList({
           </div>
 
           <div className="bg flex gap-4">
-            {editingTaskId === task.id ? (
+            {editingTaskId === task._id ? (
               <button
                 className="text-green-400 text-[14px] h-auto hover:text-white transition duration-200"
-                onClick={() => handleUpdateTask(task.id)}
+                onClick={() => handleUpdateTask(task._id)}
               >
                 Save
               </button>
@@ -66,7 +66,7 @@ function TaskList({
               <>
                 <button
                   className="text-orange-400 hover:text-white transition duration-200"
-                  onClick={() => handleEditTask(task.id)}
+                  onClick={() => handleEditTask(task._id)}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +82,7 @@ function TaskList({
 
                 <button
                   className="text-orange-400 hover:text-red-500 transition duration-200"
-                  onClick={() => handleDeleteTask(task.id)}
+                  onClick={() => handleDeleteTask(task._id)}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

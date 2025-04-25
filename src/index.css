@@ -45,9 +45,7 @@
     align-items: center;
     justify-content: center;
     padding: 0.5rem;
-    
   }
-
 
   input {
     @apply w-full  outline-none text-[1rem];
@@ -73,7 +71,7 @@
 
   .input-bar:hover,
   .input-bar:focus {
-    @apply border-orange /* Customize the shadow here */
+    @apply border-orange /* Customize the shadow here */;
   }
 
   .task-list {
@@ -83,5 +81,61 @@
 
   .btn-styles {
     @apply transition duration-200 hover:brightness-500;
+  }
+}
+
+@layer utilities {
+  @keyframes bounce-in {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    50% {
+      transform: translateY(-10px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .bounce-in {
+    animation: bounce-in 0.6s ease-out;
+    animation-delay: var(--delay, 0s);
+    animation-fill-mode: forwards;
+    opacity: 0;
+  }
+
+  @keyframes bounce-in2 {
+    0% {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    50% {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .bounce-in2 {
+    animation: bounce-in 0.6s ease-out;
+    animation-delay: var(--delay, 0s);
+    animation-fill-mode: forwards;
+    opacity: 0;
+  }
+
+  .delay-100 {
+    --delay: 0.1s;
+  }
+  .delay-200 {
+    --delay: 0.2s;
+  }
+  .delay-300 {
+    --delay: 0.3s;
   }
 }
